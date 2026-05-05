@@ -1,1 +1,14 @@
-package com.arcvision.arcledger.util; public final class ValidationUtils {public static boolean isBlank(String v){return v==null||v.trim().isEmpty();}}
+package com.arcvision.arcledger.util;
+
+public final class ValidationUtils {
+    private ValidationUtils() {
+    }
+
+    public static boolean isBlank(String value) {
+        return value == null || value.trim().isEmpty();
+    }
+
+    public static boolean isPositiveAmount(double amount) {
+        return amount > 0;
+    }
+}
