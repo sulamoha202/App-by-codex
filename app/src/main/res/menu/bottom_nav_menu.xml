@@ -1,0 +1,7 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/menu_dashboard" android:title="Dashboard" android:icon="@android:drawable/ic_menu_view"/>
+<item android:id="@+id/menu_transactions" android:title="Transactions" android:icon="@android:drawable/ic_menu_agenda"/>
+<item android:id="@+id/menu_reports" android:title="Reports" android:icon="@android:drawable/ic_menu_sort_by_size"/>
+<item android:id="@+id/menu_customers" android:title="Customers" android:icon="@android:drawable/ic_menu_myplaces"/>
+<item android:id="@+id/menu_settings" android:title="Settings" android:icon="@android:drawable/ic_menu_preferences"/>
+</menu>
