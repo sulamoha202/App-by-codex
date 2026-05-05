@@ -1,2 +1,74 @@
-package com.arcvision.arcledger.data.dao; import android.content.*; import android.database.Cursor; import com.arcvision.arcledger.data.db.DatabaseHelper; import com.arcvision.arcledger.data.model.Transaction; import java.util.*;
-public class TransactionDao {private final DatabaseHelper h; public TransactionDao(Context c){h=new DatabaseHelper(c);} public long insertTransaction(Transaction t){ContentValues v=new ContentValues();v.put("title",t.title);v.put("type",t.type);v.put("amount",t.amount);v.put("category",t.category);v.put("payment_method",t.paymentMethod);v.put("transaction_date",t.transactionDate);v.put("note",t.note);v.put("created_at",t.createdAt);v.put("updated_at",t.updatedAt);return h.getWritableDatabase().insert("transactions",null,v);} public List<Transaction> getAllTransactions(){Cursor c=h.getReadableDatabase().rawQuery("SELECT * FROM transactions ORDER BY id DESC",null);List<Transaction> l=new ArrayList<>();while(c.moveToNext()){Transaction t=new Transaction();t.id=c.getLong(0);t.title=c.getString(1);t.type=c.getString(2);t.amount=c.getDouble(3);t.category=c.getString(4);t.paymentMethod=c.getString(5);t.transactionDate=c.getString(6);l.add(t);}c.close();return l;} public double getTotalIncome(){return s("INCOME");} public double getTotalExpenses(){return s("EXPENSE");} private double s(String t){Cursor c=h.getReadableDatabase().rawQuery("SELECT COALESCE(SUM(amount),0) FROM transactions WHERE type=?",new String[]{t});c.moveToFirst();double d=c.getDouble(0);c.close();return d;} public double getBalance(){return getTotalIncome()-getTotalExpenses();}}
+package com.arcvision.arcledger.data.dao;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+
+import com.arcvision.arcledger.data.db.DatabaseHelper;
+import com.arcvision.arcledger.data.model.Transaction;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class TransactionDao {
+    private final DatabaseHelper helper;
+
+    public TransactionDao(Context context) {
+        helper = new DatabaseHelper(context);
+    }
+
+    public long insertTransaction(Transaction transaction) {
+        ContentValues values = new ContentValues();
+        values.put("title", transaction.title);
+        values.put("type", transaction.type);
+        values.put("amount", transaction.amount);
+        values.put("category", transaction.category);
+        values.put("payment_method", transaction.paymentMethod);
+        values.put("transaction_date", transaction.transactionDate);
+        values.put("note", transaction.note);
+        values.put("created_at", transaction.createdAt);
+        values.put("updated_at", transaction.updatedAt);
+        return helper.getWritableDatabase().insert("transactions", null, values);
+    }
+
+    public List<Transaction> getAllTransactions() {
+        Cursor cursor = helper.getReadableDatabase().rawQuery(
+                "SELECT * FROM transactions ORDER BY id DESC", null);
+        List<Transaction> list = new ArrayList<>();
+        while (cursor.moveToNext()) {
+            Transaction transaction = new Transaction();
+            transaction.id = cursor.getLong(0);
+            transaction.title = cursor.getString(1);
+            transaction.type = cursor.getString(2);
+            transaction.amount = cursor.getDouble(3);
+            transaction.category = cursor.getString(4);
+            transaction.paymentMethod = cursor.getString(5);
+            transaction.transactionDate = cursor.getString(6);
+            list.add(transaction);
+        }
+        cursor.close();
+        return list;
+    }
+
+    public double getTotalIncome() {
+        return sumByType("INCOME");
+    }
+
+    public double getTotalExpenses() {
+        return sumByType("EXPENSE");
+    }
+
+    public double getBalance() {
+        return getTotalIncome() - getTotalExpenses();
+    }
+
+    private double sumByType(String type) {
+        Cursor cursor = helper.getReadableDatabase().rawQuery(
+                "SELECT COALESCE(SUM(amount),0) FROM transactions WHERE type=?",
+                new String[]{type});
+        cursor.moveToFirst();
+        double total = cursor.getDouble(0);
+        cursor.close();
+        return total;
+    }
+}
