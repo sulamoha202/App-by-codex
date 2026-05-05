@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ArcLedger</string>
+    <string name="smart_accounting">Smart Accounting</string>
+    <string name="made_by">Made by ArcVision Software</string>
+</resources>
