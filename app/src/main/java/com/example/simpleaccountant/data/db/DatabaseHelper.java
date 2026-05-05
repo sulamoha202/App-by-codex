@@ -11,6 +11,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         super(context, Constants.DB_NAME, null, Constants.DB_VERSION);
     }
 
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE transactions (id INTEGER PRIMARY KEY AUTOINCREMENT,title TEXT NOT NULL,type TEXT NOT NULL,amount REAL NOT NULL,category TEXT NOT NULL,payment_method TEXT NOT NULL,transaction_date TEXT NOT NULL,note TEXT,created_at TEXT NOT NULL,updated_at TEXT NOT NULL)");
