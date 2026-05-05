@@ -1,0 +1,5 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:layout_marginBottom="8dp" android:background="@drawable/bg_card_white">
+<TextView android:id="@+id/tvTitle" android:textStyle="bold" android:textColor="@color/text_dark" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+<TextView android:id="@+id/tvMeta" android:textColor="@color/text_muted" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+<TextView android:id="@+id/tvAmount" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+</LinearLayout>
