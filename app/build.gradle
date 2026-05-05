@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.simpleaccountant'
+    namespace 'com.arcvision.arcledger'
     compileSdk 34
 
     defaultConfig {
-        applicationId 'com.example.simpleaccountant'
+        applicationId 'com.arcvision.arcledger'
         minSdk 23
         targetSdk 34
         versionCode 1
