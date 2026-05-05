@@ -1,6 +1,44 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:gravity="center" android:orientation="vertical" android:background="@drawable/bg_arc_gradient" android:layout_width="match_parent" android:layout_height="match_parent">
-<ImageView android:src="@drawable/arcvision_logo_light" android:layout_width="120dp" android:layout_height="120dp"/>
-<TextView android:text="ArcLedger" android:textColor="@android:color/white" android:textSize="30sp" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-<TextView android:text="Smart Accounting Made Simple" android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-<TextView android:text="Made by ArcVision Software" android:textColor="#CCFFFFFF" android:layout_marginTop="24dp" android:textSize="12sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/bg_arc_gradient"
+    android:padding="24dp">
+
+    <ImageView
+        android:id="@+id/ivSplashLogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:contentDescription="ArcVision logo"
+        android:src="@drawable/arcvision_logo_light" />
+
+    <TextView
+        android:id="@+id/tvSplashTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="ArcLedger"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvSplashSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Smart Accounting Made Simple"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tvSplashFooter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Made by ArcVision Software"
+        android:textColor="#CCFFFFFF"
+        android:textSize="12sp" />
+
 </LinearLayout>
