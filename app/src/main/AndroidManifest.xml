@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:allowBackup="true" android:label="Simple Accountant" android:supportsRtl="true" android:theme="@style/Theme.SimpleAccountant">
+        <activity android:name=".ui.reports.ReportsActivity" />
+        <activity android:name=".ui.suppliers.AddSupplierActivity" />
+        <activity android:name=".ui.suppliers.SupplierListActivity" />
+        <activity android:name=".ui.customers.AddCustomerActivity" />
+        <activity android:name=".ui.customers.CustomerListActivity" />
+        <activity android:name=".ui.transactions.AddTransactionActivity" />
+        <activity android:name=".ui.transactions.TransactionListActivity" />
+        <activity android:name=".ui.dashboard.DashboardActivity" android:exported="true">
+            <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+        </activity>
+    </application>
+</manifest>
