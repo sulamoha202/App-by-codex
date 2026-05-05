@@ -1,0 +1,1 @@
+package com.arcvision.arcledger.util; import java.text.DecimalFormat; public final class MoneyUtils {private static final DecimalFormat F=new DecimalFormat("#,##0.00"); public static String format(double v){return F.format(v)+" "+Constants.CURRENCY;} }
