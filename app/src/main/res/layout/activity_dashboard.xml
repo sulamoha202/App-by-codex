@@ -1,0 +1,15 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent"><LinearLayout android:orientation="vertical" android:padding="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+<TextView android:text="Dashboard" android:textSize="24sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+<TextView android:id="@+id/tvTotalIncome" android:textColor="@color/income_green" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+<TextView android:id="@+id/tvTotalExpenses" android:textColor="@color/expense_red" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+<TextView android:id="@+id/tvBalance" android:textColor="@color/balance_blue" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+<TextView android:id="@+id/tvTodayIncome" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+<TextView android:id="@+id/tvTodayExpenses" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+<TextView android:id="@+id/tvTotalTransactions" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+<com.google.android.material.button.MaterialButton android:id="@+id/btnAddIncome" android:text="Add Income" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<com.google.android.material.button.MaterialButton android:id="@+id/btnAddExpense" android:text="Add Expense" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<com.google.android.material.button.MaterialButton android:id="@+id/btnTransactions" android:text="View Transactions" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<com.google.android.material.button.MaterialButton android:id="@+id/btnCustomers" android:text="Customers" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<com.google.android.material.button.MaterialButton android:id="@+id/btnSuppliers" android:text="Suppliers" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<com.google.android.material.button.MaterialButton android:id="@+id/btnReports" android:text="Reports" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout></ScrollView>
